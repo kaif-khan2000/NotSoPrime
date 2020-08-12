@@ -8,6 +8,7 @@
         {% if movies|length > 0 %}
         <h2 class="text-light">Movies</h2>
         {% endif %}
+	<div class="row">
         {% for movie in movies %}
             <div class="col-md-4">
             <div class="card mb-4 shadow-sm">
@@ -28,9 +29,11 @@
             </div>
         </div>
         {% endfor %}
+	</div>
         {% if  series|length > 0%}
         <h2 class="text-light">series</h2>
         {% endif %}
+	<div class="row">
         {% for serie in series %}
           
         <div class="col-md-4">
@@ -52,7 +55,7 @@
             </div>
         </div>
         {% endfor %}
-
+	</div>
 
     </div>
 {% endblock body %}

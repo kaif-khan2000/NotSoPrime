@@ -25,7 +25,7 @@ SECRET_KEY = '@rz%2jr3rs98+c3-_35!bxic5ja^ye=z6g68#wea4a_d-rswf9'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['localhost','192.168.0.108']
+ALLOWED_HOSTS = ['3.15.176.3']
 
 
 # Application definition
@@ -55,7 +55,7 @@ ROOT_URLCONF = 'not_so_prime_videos.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': ['templates'],
+        'DIRS': [os.path.join(BASE_DIR,'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -119,3 +119,4 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
 STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR,"static/")

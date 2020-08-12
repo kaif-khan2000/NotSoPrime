@@ -2,7 +2,7 @@ from django.shortcuts import render,HttpResponse
 from .models import Movie,Series,SeriesVideo
 # Create your views here.
 def home(request):
-    movies = Movie.objects.all()
+    movies = Movie.objects.all().order_by('-uploaded')
     return render(request,'movies/home.html',{'movies':movies})
 
 def moviePage(request,slug):
@@ -10,7 +10,7 @@ def moviePage(request,slug):
     return render(request,'movies/viewpage.html',{'movie':movie})
 
 def seriesHome(request):
-    series = Series.objects.all();
+    series = Series.objects.all().order_by('-uploaded')
     return render(request,'series/series.html',{'series':series})
     
 def seriesPage(request,slug):
